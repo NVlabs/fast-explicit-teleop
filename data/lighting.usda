@@ -1,0 +1,60 @@
+#usda 1.0
+(
+    defaultPrim = "lighting"
+    upAxis = "Z"
+)
+
+
+def Xform "lighting" (
+    kind = "group"
+)
+{
+    token ui:displayGroup = "Material Graphs"
+    token ui:displayName = "lighting"
+    int ui:order = 1024
+    token visibility = "inherited"
+    float3 xformOp:rotateXYZ = (0, -0, 0)
+    float3 xformOp:scale = (1, 1, 1)
+    double3 xformOp:translate = (0, 0, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+
+    def RectLight "left_light" (
+        apiSchemas = ["ShapingAPI"]
+    )
+    {
+        float height = 100
+        float intensity = 32000
+        float shaping:cone:angle = 180
+        float shaping:cone:softness
+        float shaping:focus
+        color3f shaping:focusTint
+        asset shaping:ies:file
+        token visibility = "inherited"
+        float width = 100
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (0.005, 0.003, 0.002)
+        double3 xformOp:translate = (0.39, 1.0, 1.1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def RectLight "right_light" (
+        apiSchemas = ["ShapingAPI"]
+    )
+    {
+        float height = 100
+        float intensity = 32000
+        float shaping:cone:angle = 180
+        float shaping:cone:softness
+        float shaping:focus
+        color3f shaping:focusTint
+        asset shaping:ies:file
+        token visibility = "inherited"
+        float width = 100
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (0.005, 0.003, 0.002)
+        double3 xformOp:translate = (0.39, -1.0, 1.1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+}
+
+

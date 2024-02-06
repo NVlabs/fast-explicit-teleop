@@ -1,0 +1,49 @@
+[core]
+reloadable = true
+order = 0
+
+[package]
+version = "1.0.0"
+category = "Simulation"
+title = "SRL Teleop Assist"
+description = "Extension for Fast Explicit-Input Assistance for Teleoperation in Clutter"
+authors = ["NVIDIA"]
+repository = ""
+keywords = ["isaac", "teleoperation", "manipulation"]
+changelog = "docs/CHANGELOG.md"
+readme = "README.md"
+preview_image = "data/preview.png"
+icon = "data/icon.png"
+writeTarget.kit = true
+
+[dependencies]
+"omni.kit.uiapp" = {}
+"omni.kit.quicklayout" = {}
+"omni.usd" = []
+"omni.ui.scene" = {}
+"omni.kit.viewport.utility" = {}
+"omni.physx" = {}
+"omni.isaac.dynamic_control" = {}
+"omni.isaac.ui" = {}
+"omni.isaac.core" = {}
+"omni.isaac.cortex" = {}
+"omni.isaac.franka" = {}
+"omni.isaac.motion_generation" = {}
+"srl.spacemouse" = {}
+
+
+[[python.module]]
+name = "srl.teleop.base_sample"
+
+[[python.module]]
+name = "srl.teleop.assistance"
+
+[[python.module]]
+name = "srl.teleop.analysis"
+
+[[test]]
+timeout = 960
+
+[python.pipapi]
+requirements = ["numpy", "rtree", "scipy", "trimesh", "h5py"]
+use_online_index = true

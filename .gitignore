@@ -1,0 +1,8 @@
+__pycache__
+*.pyc
+.idea
+.vscode/.standalone_examples.env
+**/*/.thumbs
+*.txt
+*.pickle
+*.pdf
